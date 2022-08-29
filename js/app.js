@@ -1,3 +1,14 @@
+const PLAYER_START_POSITION_X = 202;
+const PLAYER_START_POSITION_Y = 373;
+const PLAYER_STEP_X = 101;
+const PLAYER_STEP_Y = 83;
+const ENEMY_WIDTH = 171;
+const ENEMY_START_SPEED = 100;
+const ENEMIES_START_POSITION_Y = [43, 126, 209];
+const CANVAS_WIDTH = 505;
+const DELTA_WIDTH = 85;
+const DELTA_HEIGH = 3;
+
 const skins = [
   {
     id: "boy",
@@ -58,29 +69,6 @@ skinsList.addEventListener("click", function ({ target }) {
     }
   });
 });
-
-const PLAYER_START_POSITION_X = 202;
-const PLAYER_START_POSITION_Y = 373;
-const PLAYER_STEP_X = 101;
-const PLAYER_STEP_Y = 83;
-const ENEMY_WIDTH = 171;
-const ENEMY_START_SPEED = 100;
-const ENEMIES_START_POSITION_Y = [43, 126, 209];
-const CANVAS_WIDTH = 505;
-const DELTA_WIDTH = 85;
-const DELTA_HEIGH = 3;
-
-const Rock = function (x, y) {
-  this.x = x;
-  this.y = y;
-  this.sprite = "images/Rock.png";
-};
-
-Rock.prototype.update = function () {};
-Rock.prototype.render = function () {
-  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
-const rock = new Rock(101, 373);
 
 const Enemy = function (x, y, speed) {
   this.x = x;
